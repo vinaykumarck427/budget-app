@@ -7,10 +7,8 @@ const Budget = require('../model/budget')
 const { authenticationUser } = require('../middleware/authentication')
 
 router.get('/', function(req, res) {
-  const {user} = req
-  Budget.find({
-    user: user._id
-  })
+  // const {user} = req
+  Budget.find()
     .then(function(budgets) {
       res.json(budgets)
     })
